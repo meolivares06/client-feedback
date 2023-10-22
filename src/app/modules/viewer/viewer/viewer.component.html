@@ -1,0 +1,20 @@
+<div class="viewer-container">
+  <div class="client-list border">
+    <div style="text-align: center">Clients</div>
+    <hr>
+    <ng-container *ngFor="let client of clientFeedbackService.feedbackClientList">
+      <app-client [client]="client" (click)="onClientSelected(client)" [isSelected]="clientFeedbackService.selected?.id === client.id"/>
+      <hr />
+    </ng-container>
+  </div>
+  <div class="feedback-list border">
+
+    <div style="text-align: center">Feedback list</div>
+    <hr>
+    <ng-container *ngIf="clientFeedbackService.selected">
+      <app-feedback *ngFor="let fb of clientFeedbackService.selected.feedbackList" [feedback]="fb"/>
+    </ng-container>
+
+    <textarea></textarea>
+  </div>
+</div>

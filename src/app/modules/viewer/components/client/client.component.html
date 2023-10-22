@@ -1,0 +1,10 @@
+<ng-container *ngIf="client">
+  <div [ngClass]="{selected: isSelected}">
+  <p>{{client.name}}</p>
+  <p>
+    <small>Msg:{{client.feedbackList.length}}</small> <span *ngIf="client.isProblematic">🤬</span>
+    <span *ngIf="client.noAnswer">🤐</span>
+  </p>
+  <app-client-actions [client]="client"></app-client-actions>
+  </div>
+</ng-container>
