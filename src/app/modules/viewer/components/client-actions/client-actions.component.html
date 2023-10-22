@@ -1,4 +1,4 @@
     <div>
-      <button type="button" (click)="onMarkProblematic()">Mark as Problematic</button>
-      <button type="button" (click)="onNotAnswer()">Mark Not answer</button>
+      <button type="button" (click)="onMarkProblematic()" [disabled]="client.isProblematic">Mark as Problematic</button>
+      <button type="button" (click)="onNotAnswer()" [disabled]="client.noAnswer">Mark Not answer</button>
     </div>
